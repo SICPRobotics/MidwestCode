@@ -74,16 +74,16 @@ public class Robot extends IterativeRobot {
 		chooseAutonomous.addDefault("Cross Baseline Only", new AutoCrossBaseline());
 		chooseAutonomous.addObject("Shoot Only", new AutoShoot());
 		chooseAutonomous.addObject("Center Gear Only", new AutoCenterGear());
-
-		chooseAutonomous.addObject("Center Gear then Shoot at Blue", new AutoBlueCenterGearShoot());
+		chooseAutonomous.addObject("Shoot with Intake at 10", new AutoShoot10());
+		//chooseAutonomous.addObject("Center Gear then Shoot at Blue", new AutoBlueCenterGearShoot());
 		chooseAutonomous.addObject("Gear at Blue Boiler", new AutoBlueBoilerGear());
-		chooseAutonomous.addObject("Gear then Shoot at Blue Boiler", new AutoBlueBoilerGearShoot());
+		//chooseAutonomous.addObject("Gear then Shoot at Blue Boiler", new AutoBlueBoilerGearShoot());
 		//chooseAutonomous.addObject("Shoot then Gear at Blue Boiler", new AutoBlueBoilerShootGear());
 		chooseAutonomous.addObject("Gear at Blue Retrieval Zone", new AutoBlueRetrievalZoneGear());
 		
-		chooseAutonomous.addObject("Center Gear then Shoot at Red", new AutoRedCenterGearShoot());
+		//chooseAutonomous.addObject("Center Gear then Shoot at Red", new AutoRedCenterGearShoot());
 		chooseAutonomous.addObject("Gear at Red Boiler", new AutoRedBoilerGear());
-		chooseAutonomous.addObject("Gear then Shoot at Red Boiler", new AutoRedBoilerGearShoot());
+		//chooseAutonomous.addObject("Gear then Shoot at Red Boiler", new AutoRedBoilerGearShoot());
 		//chooseAutonomous.addObject("Shoot then Gear at Red Boiler", new AutoRedBoilerShootGear());
 		chooseAutonomous.addObject("Gear at Red Retrieval Zone", new AutoRedRetrievalZoneGear());
 	 		
