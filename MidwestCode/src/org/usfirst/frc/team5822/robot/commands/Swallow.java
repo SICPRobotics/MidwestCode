@@ -32,8 +32,12 @@ public class Swallow extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() 
     {
-        return false;
-    }
+    	if (!Robot.oi.joystick.getRawButton(8) && !Robot.oi.xboxCtr.getRawButton(1))
+        {
+        	System.out.println("BOTH FALSE!");
+        	return true; 
+        }        
+    	return false;    }
 
     // Called once after isFinished returns true
     protected void end() 

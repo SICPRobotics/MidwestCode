@@ -28,8 +28,8 @@ import org.usfirst.frc.team5822.robot.commands.Turn180;
  */
 public class OI {
 
-	Joystick joystick = new Joystick(0);
-	Joystick xboxCtr = new Joystick(1);
+	public Joystick joystick = new Joystick(0);
+	public Joystick xboxCtr = new Joystick(1);
 
 	Button j7 = new JoystickButton(joystick, 7);
 	Button j8 = new JoystickButton(joystick, 8);
@@ -47,7 +47,11 @@ public class OI {
 	public OI()
 	{
 		buttonA.whenActive(new Swallow()); 		
-		buttonA.whenInactive(new StopIntake());
+		j8.whenActive(new Swallow());
+		if (!joystick.getRawButton(8) && !xboxCtr.getRawButton(1))
+		{
+			new StopIntake(); 
+		}
 		
 		buttonB.whenActive(new OuttakeSlow());
 		buttonB.whenInactive(new StopIntake());
@@ -56,20 +60,19 @@ public class OI {
 		buttonX.whenInactive(new StopIntake());
 		
 		button5.whenActive(new Shoot());
-		button5.whenInactive(new StopShooting());
+		j7.whenActive(new Shoot());
+		if (!joystick.getRawButton(7) && !xboxCtr.getRawButton(5))
+		{
+			new StopShooting(); 
+		}
 		
 		button6.whenActive(new Climb());
-		button6.whenInactive(new StopClimb());
-		
-		j7.whenActive(new Shoot());
-		j7.whenInactive(new StopShooting());
-		
-		j8.whenActive(new Swallow());
-		j8.whenInactive(new StopIntake());		
-		
-		j11.whenPressed(new InvertMotors());
-		
 		j12.whenActive(new Climb());
-		j12.whenPressed(new StopClimb()); 		
+		if (!joystick.getRawButton(12) && !xboxCtr.getRawButton(6))
+		{
+			new StopClimb(); 
+		}
+		
+		j11.whenPressed(new InvertMotors());	
 	}
 }

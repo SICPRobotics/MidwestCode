@@ -34,7 +34,12 @@ public class Shoot extends Command {
 	@Override
 	protected boolean isFinished() 
 	{
-		return false;
+		if (!Robot.oi.joystick.getRawButton(7) && !Robot.oi.xboxCtr.getRawButton(5))
+        {
+        	System.out.println("BOTH FALSE!");
+        	return true; 
+        }        
+    	return false;
 	}
 
 	// Called once after isFinished returns true

@@ -31,9 +31,7 @@ public class ButtonPrinting extends Command {
         {
         	System.out.println("BOTH FALSE!");
         	return true; 
-        }
-        	
-        
+        }        
     	return false;
     }
 

@@ -19,8 +19,6 @@ public class OI
 	
 	public OI()
 	{		
-		
-		
 		buttonA.whenActive(new ButtonPrinting()); 
 		j8.whenActive(new ButtonPrinting());
 		

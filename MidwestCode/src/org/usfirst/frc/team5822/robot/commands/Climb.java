@@ -29,7 +29,12 @@ public class Climb extends Command {
 	@Override
 	protected boolean isFinished() 
 	{
-		return false;
+		if (!Robot.oi.joystick.getRawButton(12) && !Robot.oi.xboxCtr.getRawButton(6))
+        {
+        	System.out.println("BOTH FALSE!");
+        	return true; 
+        }        
+    	return false;
 	}
 
 	// Called once after isFinished returns true
